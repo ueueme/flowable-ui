@@ -8,7 +8,7 @@
     <div class="right-menu">
       <template v-if="device!=='mobile'">
 <!--        <el-tooltip content="驰骋BPM" effect="dark" placement="bottom">-->
-<!--          <a href="http://ccflow.org/?frm=KonBAI" target="_blank" class="right-menu-item hover-effect">驰骋BPM</a>-->
+<!--          <a href="http://ccflow.org/?frm=UE" target="_blank" class="right-menu-item hover-effect">驰骋BPM</a>-->
 <!--        </el-tooltip>-->
 
         <search id="header-search" class="right-menu-item" />

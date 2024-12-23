@@ -1,11 +1,7 @@
 ## 开发
 
 ```bash
-# 克隆项目
-git clone https://gitee.com/KonBAI-Q/UE.git
 
-# 进入项目目录
-cd ruoyi-ui
 
 # 安装依赖
 npm install
@@ -26,5 +22,5 @@ npm run dev
 npm run build:stage
 
 # 构建生产环境
-npm run build:prod
+npm run build
 ```

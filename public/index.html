@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 指定文档类型为HTML5 -->
+
+    <!-- 设置字符编码为UTF-8，确保正确显示中文和其他特殊字符 -->
+    <meta charset="utf-8">
+
+    <!-- 确保页面在IE中以最高级别的渲染模式显示，并使用Chrome Frame如果可用 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <!-- 指定渲染引擎为Webkit，优化移动端和桌面端的表现 -->
+    <meta name="renderer" content="webkit">
+
+    <!-- 设置视口配置，使页面适应移动设备屏幕 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- 设置网页图标链接，动态插入favicon.ico -->
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+
+    <!-- 动态设置网页标题，通常由构建工具（如Webpack）根据配置生成 -->
+    <title><%= webpackConfig.name %></title>
+
+    <!-- 如果浏览器版本低于IE11，则重定向到特定的提示页面 -->
+    <!--[if lt IE 11]><script>window.location.href='/html/ie.html';</script><![endif]-->
+
+    <!-- 内联CSS样式定义 -->
+    <style>
+      /* 设置HTML、body和#app元素的高度为100%，并移除默认的内外边距 */
+      html,
+      body,
+      #app {
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+      }
+
+      /* 定义一个用于旧版IE浏览器检测的样式类 */
+      .chromeframe {
+        margin: 0.2em 0;
+        background: #ccc;
+        color: #000;
+        padding: 0.2em 0;
+      }
+
+      /* 定义加载器包装器的样式，作为全屏覆盖层 */
+      #loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999999;
+      }
+
+      /* 定义旋转加载动画的核心元素 */
+      #loader {
+        display: block;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        width: 150px;
+        height: 150px;
+        margin: -75px 0 0 -75px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: #FFF;
+        animation: spin 2s linear infinite; /* 使用关键帧动画实现无限循环的旋转效果 */
+        z-index: 1001;
+      }
+
+      /* 创建两个伪元素，模拟三层旋转圈的效果 */
+      #loader:before,
+      #loader:after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: #FFF;
+        animation: spin 3s linear infinite, spin 1.5s linear infinite;
+      }
+
+      /* 定义旋转变换的关键帧动画 */
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* 定义加载器两侧遮罩部分的样式 */
+      #loader-wrapper .loader-section {
+        position: fixed;
+        top: 0;
+        width: 51%;
+        height: 100%;
+        background: #7171C6;
+        z-index: 1000;
+        transform: translateX(0);
+      }
+
+      /* 分别定义左侧和右侧遮罩的具体位置 */
+      #loader-wrapper .loader-section.section-left {
+        left: 0;
+      }
+      #loader-wrapper .loader-section.section-right {
+        right: 0;
+      }
+
+      /* 当页面完全加载后，通过添加'loaded'类来隐藏加载器 */
+      .loaded #loader-wrapper .loader-section.section-left,
+      .loaded #loader-wrapper .loader-section.section-right {
+        transform: translateX(-100%), translateX(100%);
+        transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+      }
+
+      /* 渐隐加载器本身 */
+      .loaded #loader {
+        opacity: 0;
+        transition: all 0.3s ease-out;
+      }
+
+      /* 最终隐藏整个加载器包装器 */
+      .loaded #loader-wrapper {
+        visibility: hidden;
+        transform: translateY(-100%);
+        transition: all 0.3s 1s ease-out;
+      }
+
+      /* 对于不支持JavaScript的浏览器，直接隐藏加载器 */
+      .no-js #loader-wrapper {
+        display: none;
+      }
+
+      /* 定义加载文字的样式 */
+      #loader-wrapper .load_title {
+        font-family: 'Open Sans';
+        color: #FFF;
+        font-size: 19px;
+        width: 100%;
+        text-align: center;
+        z-index: 9999999999999;
+        position: absolute;
+        top: 60%;
+        opacity: 1;
+        line-height: 30px;
+      }
+
+      /* 定义加载文字中的次要信息样式 */
+      #loader-wrapper .load_title span {
+        font-weight: normal;
+        font-style: italic;
+        font-size: 13px;
+        color: #FFF;
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 应用程序的主要容器 -->
+    <div id="app">
+      <!-- 加载器及其组件 -->
+      <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+        <div class="load_title">正在加载系统资源，请耐心等待</div>
+      </div>
+    </div>
+  </body>
+</html>

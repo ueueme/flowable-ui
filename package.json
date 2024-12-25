@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
-    "build:prod": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build",
+    "build:prod": "vue-cli-service build",
     "preview": "set NODE_OPTIONS=--openssl-legacy-provider && node build/index.js --preview",
     "lint": "eslint --ext .js,.vue src"
   },

@@ -55,6 +55,11 @@
       </el-form-item>
     </el-form>
     <!--  底部  -->
+    <div class="el-login-footerone">
+      <span>本系统为OA审批的测试版本，仅供操作熟悉系统，后期以生产版本为准。</span>
+      <br>
+      <span>近期后端服务器不稳定,可能造成接口异常</span>
+    </div>
     <div class="el-login-footer">
       <span>Copyright © 2024-2025 UE All Rights Reserved.</span>
     </div>
@@ -202,6 +207,19 @@ export default {
     vertical-align: middle;
   }
 }
+.el-login-footerone {
+  height: 40px;
+  line-height: 40px;
+  position: fixed;
+  top: 0;
+  // bottom: -2;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-family: Arial;
+  font-size: 12px;
+}
+
 .el-login-footer {
   height: 40px;
   line-height: 40px;

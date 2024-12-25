@@ -1,12 +1,12 @@
 {
-  "name": "UE",
+  "name": "ruoyi-flowable-plus",
   "version": "0.8.3",
-  "description": "OA工作流系统",
-  "author": "UE",
+  "description": "RuoYi-Flowable-Plus后台管理系统",
+  "author": "KonBAI",
   "license": "MIT",
   "scripts": {
     "dev": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build",
+    "build:prod": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build",
     "preview": "set NODE_OPTIONS=--openssl-legacy-provider && node build/index.js --preview",
     "lint": "eslint --ext .js,.vue src"
   },
@@ -32,7 +32,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/UE-Q/UE.git"
+    "url": "https://gitee.com/KonBAI-Q/ruoyi-flowable-plus.git"
   },
   "dependencies": {
     "@babel/parser": "7.7.4",

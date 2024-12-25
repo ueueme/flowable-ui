@@ -13,7 +13,7 @@ npm install --registry=https://registry.npmmirror.com
 npm run dev
 ```
 
-浏览器访问 http://localhost:80
+浏览器访问 http://192.168.4.251:80
 
 ## 发布
 

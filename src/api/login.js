@@ -26,6 +26,7 @@ export function register(data) {
       isToken: false
     },
     method: 'post',
+    timeout: 900000,
     data: data
   })
 }
@@ -34,6 +35,7 @@ export function register(data) {
 export function getInfo() {
   return request({
     url: '/getInfo',
+    timeout: 900000,
     method: 'get'
   })
 }
@@ -42,6 +44,7 @@ export function getInfo() {
 export function logout() {
   return request({
     url: '/logout',
+    timeout: 900000,
     method: 'post'
   })
 }
@@ -54,7 +57,7 @@ export function getCodeImg() {
       isToken: false
     },
     method: 'get',
-    timeout: 20000
+    timeout: 900000,
   })
 }
 
@@ -66,6 +69,6 @@ export function getCodeSms() {
       isToken: false
     },
     method: 'get',
-    timeout: 20000
+    timeout: 900000,
   })
 }

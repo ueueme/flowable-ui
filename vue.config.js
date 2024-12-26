@@ -30,7 +30,7 @@ module.exports = {
   // webpack-dev-server 相关配置
   devServer: {
     host: '0.0.0.0',
-    port: 3010,
+    port: 3080,
     open: false,
     // proxy: {
     //   // detail: https://cli.vuejs.org/config/#devserver-proxy

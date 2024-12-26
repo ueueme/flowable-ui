@@ -1,9 +1,9 @@
 [build]
   command = "NODE_OPTIONS=--openssl-legacy-provider npm run build:prod"
-[[redirects]]
-    from="/*"
-    to="/index.html"
-    status=200
+# [[redirects]]
+#     from="/*"
+#     to="/index.html"
+#     status=200
 [[redirects]]
   from = "/dev-api/*"
   to = "http://192.168.4.251:3010"

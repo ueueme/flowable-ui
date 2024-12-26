@@ -1,19 +1,19 @@
 [build]
   command = "NODE_OPTIONS=--openssl-legacy-provider npm run build:prod"
-# [[redirects]]
-#     from="/*"
-#     to="/index.html"
-#     status=200
 [[redirects]]
-  from = "/dev-api/*"
-  to = "http://192.168.4.251:3010"
-  status = 200
-[[headers]]
-  for = "/dev-api/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "*"
-    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
-    Access-Control-Allow-Headers = "Content-Type"
+    from="/*"
+    to="/index.html"
+    status=200
+# [[redirects]]
+#   from = "/dev-api/*"
+#   to = "http://192.168.4.251:3010"
+#   status = 200
+# [[headers]]
+#   for = "/dev-api/*"
+#   [headers.values]
+#     Access-Control-Allow-Origin = "*"
+#     Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+#     Access-Control-Allow-Headers = "Content-Type"
 
 # [[headers]]
 #   for = "/*"  # 应用于所有路径
